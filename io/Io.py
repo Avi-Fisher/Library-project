@@ -4,29 +4,22 @@ import json
 class Io():
 
 
-    def add_file_book(self,book):
-        with open("books.json","a") as j:
-            json.dump(book,j)
+    def save_library(self,list_book,list_users):
+
+        lib = {"books": [book.__dict__ for book in list_book], "users": [user.__dict__ for user in list_users]}
+
+        with open("library.json","w") as j:
+            json.dump(lib,j,indent = 4)
 
 
-    def add_file_user(self,user):
-        with open("users.json","a") as j:
-            json.dump(user,j)
+
+    def load_library(self):
+
+        with open("library.json","r") as j:
+            library = json.load(j)
+
+        return library
 
 
-    def read_file_user(self):
-
-        with open("users.json","r") as j:
-            users = json.load(j)
-
-        return users
-
-
-    def read_file_book(self):
-
-        with open("books.json","r") as j:
-            books = json.load(j)
-
-        return books
 
 
