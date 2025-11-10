@@ -5,6 +5,7 @@ class Book():
         self.name = None
         self.type = None
         self.author = None
+        self.book = None
 
 
 
@@ -14,6 +15,7 @@ class Book():
         self.type = input("enter type book")
         self.author = input("enter author book")
 
+        self.book = {"name":self.name,"type":self.type,"author":self.author}
 
 
 
