@@ -1,5 +1,3 @@
-from encodings.punycode import selective_find
-
 
 class User():
 
