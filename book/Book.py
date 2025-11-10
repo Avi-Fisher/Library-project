@@ -1,21 +1,17 @@
 
 class Book():
 
-    def __init__(self):
-        self.name = None
-        self.type = None
-        self.author = None
-        self.book = None
+    def __init__(self,title,author,ISBN,is_available):
+        self.title = title
+        self.isbn = ISBN
+        self.author = author
+        self.is_available = is_available
 
 
 
-    def creat_book(self):
+    def __str__(self):
 
-        self.name = input("enter name book")
-        self.type = input("enter type book")
-        self.author = input("enter author book")
-
-        self.book = {"name":self.name,"type":self.type,"author":self.author}
+       return f"Title: {self.title}, ISDN: {self.isbn}, Author: {self.author}, Is available: {self.is_available}"
 
 
 
