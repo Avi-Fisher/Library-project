@@ -66,6 +66,21 @@ class Library:
             return print("The book is not available in the library.")
 
 
+    def list_available_books(self):
+        list_available = []
+        for book in self.books:
+            if book.is_available == True:
+                list_available.append(book)
+            else:
+                pass
+        return list_available
+
+    def search_book(self, title):
+        for book in self.books:
+            if book.title == title:
+                return book
+        return print("The book does not exist")
+
 
 
 
