@@ -91,7 +91,7 @@ class Menu:
                 self.library.return_book(user_id, book_isbn)
 
             elif choice == "5":
-                self.library.list_available_books()
+                print(self.library.list_available_books())
 
             elif choice == "6":
                 title_book = input("Enter title: ")
