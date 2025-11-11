@@ -13,30 +13,40 @@ class Menu:
 
         self.library = Library()
 
+
+
     def load_library(self):
 
         load_lib = Io().load_library()
-        books = load_lib["books"]
-        users = load_lib["users"]
+        try:
+            books = load_lib["books"]
+            for b in books:
+                book = Book(b["title"], b["isbn"], b["author"], b["is_available"])
 
-        for b in books:
-            book = Book(b["title"], b["isbn"], b["author"], b["is_available"])
+                self.library.add_book(book)
+        except:
+            pass
 
-            self.library.add_book(book)
+        try:
+            users = load_lib["users"]
+            for u in users:
+                user = User(u["name"], u["id"], u["borrowed_books"])
 
-        for u in users:
-            user = User(u["name"], u["id"], u["borrowed_books"])
-
-            self.library.add_book(user)
+                self.library.add_book(user)
+        except:
+            pass
 
     def save_library(self):
         Io().save_library(self.library.books, self.library.users)
 
 
+
     def start(self):
         print("- - - - - - - - - - - - -")
-        print(("Welcome to the library"))
+        print("Welcome to the library")
         print("- - - - - - - - - - - - -")
+
+
 
     def manu(self):
         while True:
@@ -87,6 +97,8 @@ class Menu:
 
             elif choice == "7":
                 print("Thank you for visiting us. We would love to see you again.")
+                self.save_library()
+
                 break
 
             else:

@@ -1,11 +1,11 @@
 
 class Book:
 
-    def __init__(self,title,ISBN,author):
+    def __init__(self,title,ISBN,author,is_available = True):
         self.title = title
         self.isbn = ISBN
         self.author = author
-        self.is_available = True
+        self.is_available = is_available
 
 
 
