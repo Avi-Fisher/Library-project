@@ -10,9 +10,9 @@ class Library:
 
     def add_book(self,book):
         for b in self.books:
-            if b.title == book.title:
+            if b.isbn == book.isbn:
                 return "This book is already exist"
-        self.books.appand(book)
+        self.books.append(book)
         print("Book is added successfully")
 
 
