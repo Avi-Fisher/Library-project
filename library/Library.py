@@ -12,7 +12,7 @@ class Library:
         for b in self.books:
             if b.title == book.title:
                 return "This book is already exist"
-        self.books.appand(book)
+        self.books.append(book)
         print("Book is added successfully")
 
 
@@ -69,8 +69,8 @@ class Library:
     def list_available_books(self):
         list_available = []
         for book in self.books:
-            if book.is_available == True:
-                list_available.append(book)
+            if book.is_available:
+                list_available.append(book.__str__())
             else:
                 pass
         return list_available
