@@ -1,7 +1,7 @@
 import json
 
 
-class Io():
+class Io:
 
 
     def save_library(self,list_book,list_users):

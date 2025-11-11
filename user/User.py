@@ -1,5 +1,5 @@
 
-class User():
+class User:
 
     def __init__(self,name,id,borrowed_books = []):
 
