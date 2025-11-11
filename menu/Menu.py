@@ -16,8 +16,10 @@ class Menu:
 
 
     def load_library(self):
-
-        load_lib = Io().load_library()
+        try:
+            load_lib = Io().load_library()
+        except:
+            pass
         try:
             books = load_lib["books"]
             for b in books:
