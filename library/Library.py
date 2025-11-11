@@ -28,13 +28,13 @@ class Library:
     def find_book(self, book_isbn):
         for b in self.books:
             if b.isbn == book_isbn:
-                return b
+                return b.__str__()
         return None
 
     def find_user(self,user_id):
         for u in self.users:
             if u.id == user_id:
-                return u
+                return u.__str__()
         return None
 
     def borrow_book(self, user_id, book_isbn):
@@ -70,7 +70,7 @@ class Library:
         list_available = []
         for book in self.books:
             if book.is_available == True:
-                list_available.append(book)
+                list_available.append(book.__str__())
             else:
                 pass
         return list_available
@@ -78,7 +78,7 @@ class Library:
     def search_book(self, title):
         for book in self.books:
             if book.title == title:
-                return book
+                return book.__str__()
         return print("The book does not exist")
 
 
