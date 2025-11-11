@@ -79,7 +79,7 @@ class Library:
         for book in self.books:
             if book.title == title:
                 return book.__str__()
-        return print("The book does not exist")
+        return "The book does not exist"
 
 
 
