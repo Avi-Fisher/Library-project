@@ -13,7 +13,7 @@ class Library:
             if b.isbn == book.isbn:
                 return "This book is already exist"
         self.books.append(book)
-        print("Book is added successfully")
+        return "Book is added successfully"
 
 
 
@@ -22,7 +22,7 @@ class Library:
             if u.id == user.id:
                 return "This user already exist!"
         self.users.append(user)
-        print("User created successfully!")
+        return "User created successfully!"
 
 
     def find_book(self, book_isbn):

@@ -72,13 +72,13 @@ class Menu:
                 isbn = input("Enter isbn: ")
                 author = input("Enter author: ")
                 book = Book(title, isbn, author)
-                self.library.add_book(book)
+                print(self.library.add_book(book))
 
             elif choice == "2":
                 name = input("Enter name: ")
                 id = input("Enter id: ")
                 user = User(name, id)
-                self.library.add_user(user)
+                print(self.library.add_user(user))
 
             elif choice == "3":
                 user_id = input("Enter your id: ")
