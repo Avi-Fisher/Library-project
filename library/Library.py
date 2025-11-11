@@ -54,8 +54,16 @@ class Library:
     def return_book(self, user_id, book_isbn):
         book = self.find_book(book_isbn)
         user = self.find_user(user_id)
-        if book in self.books:
-            return print("")
+        if book != None:
+            if user != None:
+                if book.is_available == False:
+                    user.borrowed_books.remove(book)
+                    book.is_available = True
+                else:
+                    return print("The book has already been returned")
+            return print("Username not registered")
+        else:
+            return print("The book is not available in the library.")
 
 
 
